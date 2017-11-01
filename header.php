@@ -1,3 +1,5 @@
+<?php include("config.php") ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 
     <title>Recept</title>
 </head>
- <header class="site-header">
+<header class="site-header">
     <nav class="site-nav">
         <ul>
             <li>
@@ -23,6 +25,9 @@
             <li> 
                 <a class="<?php echo $current_page == 'contact.php' ? 'active' : NULL ?>" href="contact.php">Contact</a>
             </li>
+            <li>
+                <a class="<?php echo $current_page == 'logIn.php' ? 'active' : NULL ?>" href="logIn.php">Sign in</a>
+            </li>
         </ul>
     </nav>
-  </header> 
+</header> 
