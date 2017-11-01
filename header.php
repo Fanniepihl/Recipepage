@@ -12,7 +12,7 @@
     <nav class="site-nav">
         <ul>
             <li> <a href="index.php">Home</a></li>   
-            <li> <a href="favouriteRecipes.php">Favourites</a></li>
+            <li> <a href="favorites.php">Favourites</a></li>
             <li> <a href="#">My recipes</a></li>
             <li> <a href="#">Contact</a></li>
         </ul>
