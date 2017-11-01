@@ -11,10 +11,18 @@
  <header class="site-header">
     <nav class="site-nav">
         <ul>
-            <li> <a href="index.php">Home</a></li>   
-            <li> <a href="favouriteRecipes.php">Favourites</a></li>
-            <li> <a href="#">My recipes</a></li>
-            <li> <a href="#">Contact</a></li>
+            <li>
+                <a class="<?php echo ($current_page == 'index.php' || $current_page == '') ? 'active' : NULL ?>" href="index.php">Home</a>
+            </li>
+            <li>
+                <a class="<?php echo $current_page == 'favouriteRecipes.php' ? 'active' : NULL ?>" href="favouriteRecipes.php">Favourite recipes</a>   
+            </li>
+            <li> 
+                <a class="<?php echo $current_page == 'myRecipes.php' ? 'active' : NULL ?>" href="myRecipes.php">My recipes</a>
+            </li>
+            <li> 
+                <a class="<?php echo $current_page == 'contact.php' ? 'active' : NULL ?>" href="contact.php">Contact</a>
+            </li>
         </ul>
     </nav>
   </header> 
