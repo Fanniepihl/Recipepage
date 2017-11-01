@@ -20,7 +20,7 @@
                 <a class="<?php echo $current_page == 'categories.php' ? 'active' : NULL ?>" href="categories.php">Categories</a>   
             </li>
             <li>
-                <a class="<?php echo $current_page == 'favorite.php' ? 'active' : NULL ?>" href="favouriteRecipes.php">Favourite recipes</a>   
+                <a class="<?php echo $current_page == 'favourites.php' ? 'active' : NULL ?>" href="favourites.php">Favourite recipes</a>   
             </li>
             <li> 
                 <a class="<?php echo $current_page == 'myRecipes.php' ? 'active' : NULL ?>" href="myRecipes.php">My recipes</a>
