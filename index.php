@@ -1,4 +1,5 @@
 <?php include('header.php') ?>
+<?php include("config.php") ?>
 
    
 <div id="bread"> 
