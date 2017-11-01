@@ -108,6 +108,5 @@ if (isset($_POST['username'], $_POST['userpass'])) {
             <input type="password" name="userpass">
             <input type="submit" value="Go">
         </form>
-
     </body>
 </html>
