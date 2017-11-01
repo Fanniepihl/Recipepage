@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-   <link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
 
@@ -33,5 +33,3 @@
 </div><!--end wrap-->
 
 </div> <!--end bread--> 
-
-HELLOOOOO
