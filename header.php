@@ -15,7 +15,7 @@
                 <a class="<?php echo ($current_page == 'index.php' || $current_page == '') ? 'active' : NULL ?>" href="index.php">Home</a>
             </li>
             <li>
-                <a class="<?php echo $current_page == 'favouriteRecipes.php' ? 'active' : NULL ?>" href="favouriteRecipes.php">Favourite recipes</a>   
+                <a class="<?php echo $current_page == 'favorite.php' ? 'active' : NULL ?>" href="favouriteRecipes.php">Favourite recipes</a>   
             </li>
             <li> 
                 <a class="<?php echo $current_page == 'myRecipes.php' ? 'active' : NULL ?>" href="myRecipes.php">My recipes</a>
