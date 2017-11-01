@@ -33,3 +33,4 @@
 </div><!--end wrap-->
 
 </div> <!--end bread--> 
+<?php include('footer.php') ?>
