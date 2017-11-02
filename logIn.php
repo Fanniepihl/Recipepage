@@ -1,8 +1,9 @@
-<?php 
-include ("header.php")
-?>
+<?php include("header.php") ?>
+<?php include("config.php") ?>
 
 <h1 class="">Sign in</h1>
+
+
 
 <?php
 
