@@ -21,7 +21,6 @@ $stmt->bind_result($ingredientsid, $name);
 $stmt->execute();
 
 //Query to add ingredients
- 
 if(isset($_POST['addIngredients'])) {
 
 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -46,11 +45,12 @@ $stmt = $db->prepare($addIngredients);
 $stmt->bind_result('is', $ingredientsid, $name);
 $stmt->execute();
 
-//header("location:../fn.php");
+header("location:fn.php");
 
 }
 
 ?>
+
 
 <!-- ADD RECIPE HERE -->
 <form method="POST">
@@ -87,6 +87,7 @@ them as aoptions in a dropdown list -->
 <!-- ADD INGREDIENTS IN DROP DOWN HERE -->
 <form method="POST">
 	<h2>Add Ingredients</h2>
+	<INPUT type="number" required placeholder="Id" name="ingredientsid"></br>
 	<INPUT type="text" required placeholder="Name" name="name"></br>
 	<INPUT type="submit" name="addIngredients">
 </form>
@@ -95,8 +96,7 @@ them as aoptions in a dropdown list -->
 
 
 
-
-
+<!-- 11.29 är vi i i JAsmins video om Joins -->
 
 
 
