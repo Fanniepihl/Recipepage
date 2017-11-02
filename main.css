@@ -45,8 +45,12 @@ a.active {
     background-image:url(img/loser.jpg);
     height: 650px;
     background-size: cover;
-    
 }
+
+#myrecipe {
+  background-image:url(img/bg/faving.jpg);
+}
+
 .site-header nav {
     position: fixed;
     top: 0;
