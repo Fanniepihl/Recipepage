@@ -96,7 +96,9 @@ them as aoptions in a dropdown list -->
 
 
 
-<!-- 11.29 är vi i i JAsmins video om Joins -->
+<!-- 11.29 är vi i i JAsmins video om Joins och inserts -->
+
+
 
 
 
