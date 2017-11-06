@@ -171,7 +171,7 @@ a.active {
 
 .image {
   display: block;
-  width: 70%;
+  width: 100%;
   height: auto;
 }
 
@@ -203,6 +203,12 @@ a.active {
   -ms-transform: translate(-50%, -50%);
 }
 
+/*TEXT*/
+h2 {
+    text-align: center;
+    margin: 0;
+    color: white;
+}
 
 /* FOOTER */
 

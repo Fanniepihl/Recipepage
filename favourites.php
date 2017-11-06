@@ -2,7 +2,8 @@
 <?php include("config.php") ?>
 
 <body>
-<h1> Here is your favorite recipes</h1>
+
+<h2> Here is your favorite recipes</h2>
 
 
 </body>
