@@ -2,6 +2,11 @@
 <?php include("config.php") ?>
 
 <body> 
+  <div id="kontakt" >
+    <h2>Contact us!</h2>
+    </div> 
+    
+    
 <!--- Forumlär för att kunna kontakta oss--->
 <?php
 $action=$_REQUEST['action'];

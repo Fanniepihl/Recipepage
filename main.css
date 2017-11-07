@@ -165,13 +165,14 @@ a.active {
   width: 30%;
   margin-top: 100px;
   margin-bottom: 50px;
-  float: left;
+    margin-left: 45px;
+    float: left;
 
 }
 
 .image {
   display: block;
-  width: 70%;
+  width: 100%;
   height: auto;
 }
 
@@ -182,7 +183,7 @@ a.active {
   left: 0;
   right: 0;
   height: 100%;
-  width: 70%;
+  width: 100%;
   opacity: 0;
   transition: .5s ease;
   background-color: #efefef;
