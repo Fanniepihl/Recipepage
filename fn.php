@@ -45,7 +45,7 @@ $stmt = $db->prepare($addIngredients);
 $stmt->bind_result('is', $ingredientsid, $name);
 $stmt->execute();
 
-header("location:fn.php");
+//header("location:fn.php");
 
 }
 
@@ -63,7 +63,7 @@ if ($db->connect_error) {
 }
 
 //KOLLA KODEN I VIDEON VID 19:21 (detta för om detta nedanför stämmer, om det ska med ett ID eller ej?!?!?!?)
-$recipeid = $_POST ['recipeid'];
+//$newrecipeid = $_POST ['recipeid'];
 $newtitle = $_POST['title'];
 $newdescription = $_POST['description'];
 $newcatid = $_POST['category'];
