@@ -1,4 +1,4 @@
-<!-- En del av en av de tre sidorna (fesi steak pasta) som vi kommer lägga till recept i-->
+<!-- En del av en av de tre sidorna (fish steak pasta) som vi kommer lägga till recept i-->
 <?php
 
 include "config.php";
@@ -48,6 +48,14 @@ $stmt->execute();
 header("location:fn.php");
 
 }
+
+
+//HÄR BÖRJA JAG NU IDAG: TA BORT OM DET EJ FUNKAR (8:44) i koden!!
+
+
+
+
+
 
 ?>
 
@@ -100,7 +108,7 @@ them as aoptions in a dropdown list -->
 
 
 
-
+<!-- är i videon: 15.47 -->
 
 
 
