@@ -2,7 +2,7 @@
 <?php include("config.php") ?>
 
 <body>
-<h2>Choose a categorie</h2>
+<h2>Choose a category</h2>
     
     
 <div class="container">
