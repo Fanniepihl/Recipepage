@@ -137,8 +137,8 @@ them as aoptions in a dropdown list -->
 <!-- ADD INGREDIENTS IN DROP DOWN HERE -->
 <form method="POST">
 	<h2>Add Ingredients</h2>
-	<INPUT type="number" required placeholder="Id" name="ingredientsid"></br>
-	<INPUT type="text" required placeholder="Name" name="name"></br>
+	<!-- <INPUT type="number" required placeholder="Id" name="ingredientsid"></br> -->
+	<INPUT type="text" required placeholder="Name" name="name"></br></br>
 	<INPUT type="submit" name="addIngredients" value="Send">
 </form>
 
