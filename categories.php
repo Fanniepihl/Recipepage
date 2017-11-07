@@ -5,25 +5,31 @@
 <h2>Choose a category</h2>
     
     
-<div class="container">
+<div class="container"><!---contaner är boxen som fish bilden och texten ligger i--->
   <img img src="img/fisk.jpeg" class="image">
-  <div class="overlay">
-    <div class="text"><a href="fish.php">Fish</a></div>
-  </div>
+  <a href="fish.php">
+      <div class="overlay">
+    <div class="text">Fish</div><!---end class text--->
+  </div><!--end class overlay--->
+      </a><!--end link--->
 </div><!--end container-->
 
 <div class="container">
   <img img src="img/stek.jpeg" class="image">
-  <div class="overlay">
-    <div class="text"><a href="steak.php">Steak</a></div>
-  </div>
+  <a href="steak.php">
+      <div class="overlay">
+    <div class="text">Steak</div><!---end class text--->
+  </div><!--end class overlay--->
+      </a><!--end link--->
 </div><!--end container-->
 
 <div class="container">
-  <img img src="img/chick.png" class="image">
-  <div class="overlay">
-    <div class="text"><a href="pasta.php">Pasta</a></div>
-  </div>
+  <img img src="img/pasta.jpg" class="image">
+  <a href="pasta.php">
+      <div class="overlay">
+    <div class="text">Pasta</div><!---end class text--->
+  </div><!--end class overlay--->
+      </a><!--end link--->
 </div><!--end container-->
 
 
