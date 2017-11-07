@@ -130,7 +130,7 @@ them as aoptions in a dropdown list -->
 <!-- And this is the button "Add ingredients" that adds to the array of ingredients, using the js script -->
 <!-- 5.07 min i videon, "connectIngredientsRecipe" är button ID i js script. 8.47 min  -->
 <button id="connectIngredientsRecipe" for="addIngredients">Add Ingredients</button></br>
-<INPUT type="submit" name="addRecipe">
+<INPUT type="submit" name="addRecipe" value="Send">
 
 </form>
 
@@ -139,7 +139,7 @@ them as aoptions in a dropdown list -->
 	<h2>Add Ingredients</h2>
 	<INPUT type="number" required placeholder="Id" name="ingredientsid"></br>
 	<INPUT type="text" required placeholder="Name" name="name"></br>
-	<INPUT type="submit" name="addIngredients">
+	<INPUT type="submit" name="addIngredients" value="Send">
 </form>
 
 <script type="text/javascript" src="addRecipe.js"></script>
