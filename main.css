@@ -162,9 +162,10 @@ a.active {
 
 .container {
   position: relative;
-  width: 33.33%;
+  width: 30%;
   margin-top: 100px;
   margin-bottom: 50px;
+  float: left;
 
 }
 
