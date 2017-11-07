@@ -51,11 +51,53 @@ header("location:fn.php");
 
 
 //HÄR BÖRJA JAG NU IDAG: TA BORT OM DET EJ FUNKAR (8:44) i koden!!
+//
+if(isset($_POST['addRecipe'])) {
+
+@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+if ($db->connect_error) {
+	echo "could not connect: " . $db->connect_error;
+	printf("<br><a href=index.php>Return to home page</a>");
+	exit();
+}
+
+//KOLLA KODEN I VIDEON VID 19:21 (detta för om detta nedanför stämmer, om det ska med ett ID eller ej?!?!?!?)
+$recipeid = $_POST ['recipeid'];
+$newtitle = $_POST['title'];
+$newdescription = $_POST['description'];
+$newcatid = $_POST['category'];
+$newimage = $_POST['image'];
 
 
+$addRecipe ="INSERT INTO recipe(title, description, catid, image) VALUES (?, ?, ?, ?)";
 
+//New book with AutoIncrement ID is added.
+//Last one is 50
+$stmt = $db->prepare($addRecipe);
+$stmt->bind_result('ssis', $title, $description, $catid, $image);
+$stmt->execute();
 
+$recipeid = mysqli_insert_id($db);
 
+//Echo under här outar nästa nummer i listan vi har 50 så då blire nästa 51 auto..
+//echo $recipeid
+//                                 $id kommer från en specifik ingrediens som sänds
+//									från listan i js filen (addade ingredienser)
+//									i listan går det från 0, 1, 2, 3 osv
+foreach ($ingredientsid as $index => $id) {
+	
+	@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+	$add_recing = "INSERT INTO recing(recipeid,ingredientsid) VALUES('$recipeid','$id')";
+
+	$stmt = $db->prepare($add_recing);
+	$stmt->execute();
+}
+
+}
+
+//TILL HIT HAR JAG KODAT!!!!! INTE UNDER/ÖVER!!!!
 
 ?>
 
