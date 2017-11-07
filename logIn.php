@@ -99,7 +99,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
             if ($totalcount == 0) {
                 echo '<h2>You got it wrong. Can\'t break in here!</h2>';
             } else {
-                echo '<h2>Welcome! Correct password.</h2><a href="fileUpload.php">Go to upload file</a>';
+                echo '<h2>Welcome! Correct password.</h2><a href="myrecipes.php"><h3>Upplode your recipie here</h3></a>';
          
             }
         }
