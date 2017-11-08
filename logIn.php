@@ -28,7 +28,7 @@
 //
 //    }
 
-@ $db = new mysqli('localhost:8889', 'root', 'root', 'bread');
+@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
 if ($db->connect_error) {
     echo "could not connect: " . $db->connect_error;
