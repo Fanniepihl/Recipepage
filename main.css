@@ -41,10 +41,19 @@ a.active {
  
 }
 
-#fish{
-    background-image:url(img/loser.jpg);
-    height: 650px;
+.category_header_image_pasta{
+    background-image: url(img/pasta_header_img.jpg);
+    height: 500px;
+    width: 100%;
     background-size: cover;
+    background-position: center;
+}
+.category_header_image_steak{
+    background-image: url(img/steak_header_img.jpg);
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center; 
 }
 
 #myrecipe {
@@ -205,6 +214,15 @@ a.active {
 }
 
 /*TEXT*/
+h1{
+      color: white;
+    font-size: 146px;
+    text-align: center;
+    margin: 0;
+    padding-top: 66px;
+    font-family: 'Playfair Display', serif;
+    font-weight:800;
+}
 h2 {
     text-align: center;
     margin: 0;
@@ -212,6 +230,7 @@ h2 {
     font-size: 50px;
     padding-top: 60px;
 }
+
 
 /*LINK*/
 a {
