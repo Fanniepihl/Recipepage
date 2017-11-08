@@ -1,9 +1,12 @@
 <?php include("header.php") ?>
 <?php include("config.php") ?>
 <body>
-<div class="pastagallery"> <!--en div class för pasta recept -->
+    <div class="category_header_image">
+        <h1>Pasta</h1>
+    </div><!---end category_header_image--->
     
-    </div> <!-- end div class pastagallery-->
+<div class="pastagallery"> <!--en div class för pasta recept -->
+</div> <!-- end div class pastagallery-->
 
 
 </body>

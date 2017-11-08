@@ -4,6 +4,11 @@
 <body>
 
 <h2> Here is your favorite recipes</h2>
+<<<<<<< HEAD
+=======
+<h3>To see your favorite recipes you need to logg in</h3>  
+    <button><a href="logIn.php" >Logg in here</a></button>
+>>>>>>> f674e02c90ffab12e6896820a77965201497e5fc
 
 </body>
 
