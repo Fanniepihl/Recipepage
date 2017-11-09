@@ -4,11 +4,10 @@
 <body>
 
 <h2> Here is your favorite recipes</h2>
-<<<<<<< HEAD
-=======
+
 <h3>To see your favorite recipes you need to logg in</h3>  
     <button><a href="logIn.php" >Logg in here</a></button>
->>>>>>> f674e02c90ffab12e6896820a77965201497e5fc
+
 
 </body>
 
@@ -73,7 +72,7 @@
 	    
 
 	    echo '<table id="t01" style="width:100%" >';
-		echo '<tr><b><td>RecipeId</td><b> <td>Title</td> <td>Ingredients</td> <td>Added?</td> </b> <td>Add</td> </b></tr>';
+		echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Ingredients</td> <td>Added?</td> </b> <td>Add</td> </b></tr>';
 	    while ($stmt->fetch()) {
 	        if($onloan==0)
 		            $onloan="No";
