@@ -6,7 +6,7 @@
 </body>
 
 
-<main>
+<main class="field">
 			<form action="steak.php" method="POST">
 				<fieldset>
 					<legend><h3>Browse recipes:</h3></legend><br>
@@ -15,7 +15,7 @@
 			    		Recipe:<br>
 			    		<INPUT type="text" id="searchtitle" name="searchtitle" value=""><br>
 			    		Ingredients:<br>
-			    		<INPUT type="text" id="searchingredients" name="searchingredients" value=""><br>
+			    		<INPUT type="text" id="searchingredients" name="searchingredients" value=""><br><br>
 			    		<INPUT type="submit" name="submit" value="Search">
 			    	</table>
 			  	</fieldset>
