@@ -128,7 +128,7 @@ a.active {
   margin-top: 4px;
 }
 
-.searchTerm {
+#searchrecipe {
   float: left;
   width: 100%;
   border: 1px solid #fff;
