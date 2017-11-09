@@ -25,7 +25,6 @@ $recipeid = addslashes($recipeid);
     $stmt->bind_param('i', $recipeid);
     $stmt->execute();
     printf("<br>Succesfully returned!");
-    printf("<br><a href=fish.php>Search for more recipes </a>");
     printf("<br><a href=favourites.php>Return to Favorites </a>");
     printf("<br><a href=index.php>Return to home page </a>");
     exit;

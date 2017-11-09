@@ -54,7 +54,7 @@
 
 						// " SELECT recipeid, title, ingredients, onloan " // SELECT * FROM recipe
 
-				$query = " SELECT recipeid, title, ingredients, onloan, image FROM recipe";
+				$query = " SELECT recipeid, title, ingredients, description, onloan, image FROM recipe";
 				if ($searchtitle && !$searchingredients) { // Title search only
 				    $query = $query . " Where title like '%" . $searchtitle . "%'";
 				}
@@ -68,20 +68,20 @@
 				
 
 				$stmt = $db->prepare($query);
-			    $stmt->bind_result($recipeid, $title, $ingredients, $onloan, $image);
+			    $stmt->bind_result($recipeid, $title, $ingredients, $description, $onloan, $image);
 			    $stmt->execute();
 
 
 			echo '<table id="t01" style="width:100%" >';
-		    echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Ingredients</td> <td>Added?</td> </b> <td>Add</td> </b></tr>';
+		    echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Ingredients</td> <td> Description</td> <td>Added?</td> </b> <td>Add</td> </b></tr>';
 		    while ($stmt->fetch()) {
 		        if($onloan==0)
 		            $onloan="No";
 		        else $onloan="Yes";
 		       
 		        echo "<tr>";
-		        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $ingredients </td><td> $onloan </td>";
-		        echo '<td><a href="addrecipes.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Add"></input></a></td>';
+		        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $ingredients </td> <td> $description </td> <td> $onloan </td>";
+		        echo '<td><a href="addrecipessteak.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Add"></input></a></td>';
 		        echo "</tr>";
 
         
