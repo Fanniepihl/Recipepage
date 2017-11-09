@@ -105,8 +105,10 @@ if (isset($_POST['username'], $_POST['userpass'])) {
         }
         ?>
         <form method="POST" action="">
-            <input type="text" name="username">
-            <input type="password" name="userpass">
+            Username:<br>
+            <input type="text" name="username"><br>
+            Password:<br>
+            <input type="password" name="userpass"><br>
             <input type="submit" value="Go">
         </form>
     </body>
