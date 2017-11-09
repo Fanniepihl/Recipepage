@@ -1,7 +1,7 @@
 <?php include("header.php") ?>
 <?php include("config.php") ?>
 <body>
-    <div class="category_header_image">
+    <div class="category_header_image_pasta">
         <h1>Pasta</h1>
     </div><!---end category_header_image--->
     
