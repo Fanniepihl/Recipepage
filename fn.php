@@ -111,9 +111,11 @@ if ($db->connect_error) {
 
 $newtitle = $_POST['newtitle'];
 $newdescription = $_POST['newdescription'];
-$newcatid = "$catid";
+$newingredientsid = $_POST['ingredients'];
+$newcatid = $_POST['category'];
 $ingredientsids = $_POST['ingredients']; //kanske ska vara ingredientsidS 
 //$newimage = $_POST['image'];
+
 
 echo $newtitle;
 echo $newdescription;
@@ -121,13 +123,13 @@ echo $newcatid;
 echo $ingredientsids;
 
 
-$newrecipe ="INSERT INTO recipe(title, description, catid) VALUES (?, ?, ?)"; //image också efter catid
+$newrecipe ="INSERT INTO recipe(title, description, ingredientsid, catid) VALUES (?, ?, ?, ?)"; //image också efter catid
 echo $newrecipe;
 
 //New book with AutoIncrement ID is added.
 //Last one is 50
 $stmt = $db->prepare($newrecipe);
-$stmt->bind_param('ssi', $newtitle, $newdescription, $newcatid); //$image
+$stmt->bind_param('ssii', $newtitle, $newdescription, $newingredientsid, $newcatid); //$image
 $stmt->execute();
 
 $newrecipeid = mysqli_insert_id($db); //kanske ska vara receptid
@@ -150,18 +152,6 @@ foreach ($ingredientsids as $index => $id) {
 	$stmt->execute();
 }
 
-$newcatid = mysqli_insert_id($db); //kanske ska vara receptid
-
-foreach ($catids as $index => $id) {
-	
-	@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
-
-	$add_recipe = "INSERT INTO recipe(catid) VALUES('$newcatid','$id')";
-
-	$stmt = $db->prepare($add_recipe);
-	$stmt->execute();
-
-}
 }
 
 ?>
@@ -178,7 +168,8 @@ foreach ($catids as $index => $id) {
 
 	<!-- This is where we select all ingredients from the DB and present 
 	them as options in a dropdown list -->
-	<select id="ingredients" name="ingredients[]" id="ingredients">
+	<!-- Ändra denna för att recing ska fungera -->
+	<select name="ingredients" name="ingredients[]" id="ingredients">
 	<?php
 		 while ($stmt->fetch()) {
 		 	echo "<option value='".$ingredientsid."'>".$name."</option>";
@@ -197,7 +188,7 @@ foreach ($catids as $index => $id) {
 
 	<!--This is where we select all categories from the DB and present 
 	them as options in a dropdown list-->
-	<select id="categories" name="category" id="category">
+	<select name="category" id="category">
 	<?php
 
 	//Query to get all categories
@@ -221,7 +212,7 @@ foreach ($catids as $index => $id) {
 <!-- ADD INGREDIENTS IN DROP DOWN HERE -->
 <form action="fn.php" method="POST">
 	<h2>Add Ingredients</h2>
-	<INPUT type="number" required placeholder="Id" id="newingredientsid" name="newingredientsid"></br>
+	<!--<INPUT type="number" required placeholder="Id" id="newingredientsid" name="newingredientsid"></br>-->
 	<INPUT type="text" required placeholder="Name" id="newname" name="newname"></br></br>
 	<!--<INPUT type="submit" id="newingredients" name="newingredients" value="Send">-->
 	<INPUT type="submit" name="newingredients" value="Send">
@@ -229,7 +220,7 @@ foreach ($catids as $index => $id) {
 
 <form action="fn.php" method="POST">
 	<h2>Add Category</h2>
-	<INPUT type="number" required placeholder="Id" id="newcatid" name="newcatid"></br>
+	<!--<INPUT type="number" required placeholder="Id" id="newcatid" name="newcatid"></br>-->
 	<INPUT type="text" required placeholder="Name" id="newcatname" name="newcatname"></br></br>
 	<!--<INPUT type="submit" id="newingredients" name="newingredients" value="Send">-->
 	<INPUT type="submit" name="newcategories" value="Send">
