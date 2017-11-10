@@ -12,13 +12,11 @@ if ($db->connect_error) {
 	exit();
 }
 
-//Query to get all categories
-$getCategories = "SELECT * FROM categories";
 
-$stmt = $db->prepare($getCategories);
-$stmt->bind_result($catid, $catname);
-$stmt->execute();
 
+// while($stmt->fetch()){
+// 	echo $catname;
+// }
 //Query to add ingredients
 if(isset($_POST['newcategories'])) {
 
@@ -111,15 +109,20 @@ if ($db->connect_error) {
 	exit();
 }
 
-//KOLLA KODEN I VIDEON VID 19:21 (detta för om detta nedanför stämmer, om det ska med ett ID eller ej?!?!?!?)
 $newtitle = $_POST['newtitle'];
 $newdescription = $_POST['newdescription'];
-$newcatid = $_POST['newcatid'];
+$newcatid = "$catid";
 $ingredientsids = $_POST['ingredients']; //kanske ska vara ingredientsidS 
 //$newimage = $_POST['image'];
 
+echo $newtitle;
+echo $newdescription;
+echo $newcatid;
+echo $ingredientsids;
+
 
 $newrecipe ="INSERT INTO recipe(title, description, catid) VALUES (?, ?, ?)"; //image också efter catid
+echo $newrecipe;
 
 //New book with AutoIncrement ID is added.
 //Last one is 50
@@ -130,6 +133,7 @@ $stmt->execute();
 $newrecipeid = mysqli_insert_id($db); //kanske ska vara receptid
 
 echo $newrecipeid;
+
 
 //Echo under här outar nästa nummer i listan vi har 50 så då blire nästa 51 auto..
 //echo $recipeid
@@ -146,9 +150,19 @@ foreach ($ingredientsids as $index => $id) {
 	$stmt->execute();
 }
 
-}
+$newcatid = mysqli_insert_id($db); //kanske ska vara receptid
 
-//TILL HIT HAR JAG KODAT!!!!! INTE UNDER/ÖVER!!!!
+foreach ($catids as $index => $id) {
+	
+	@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+	$add_recipe = "INSERT INTO recipe(catid) VALUES('$newcatid','$id')";
+
+	$stmt = $db->prepare($add_recipe);
+	$stmt->execute();
+
+}
+}
 
 ?>
 
@@ -160,11 +174,10 @@ foreach ($ingredientsids as $index => $id) {
 	<INPUT type="text" required placeholder="Description" name="newdescription"></br>
 	<!-- <INPUT type="text" required placeholder="Recipe Name" name="ingredients"><br> -->
 
-	<!--<INPUT type="text" required placeholder="Category" name="catid"></br>-->
 	<ul id="ingredientsToRecipe"></ul>
 
 	<!-- This is where we select all ingredients from the DB and present 
-	them as aoptions in a dropdown list -->
+	them as options in a dropdown list -->
 	<select id="ingredients" name="ingredients[]" id="ingredients">
 	<?php
 		 while ($stmt->fetch()) {
@@ -172,31 +185,34 @@ foreach ($ingredientsids as $index => $id) {
 		 }
 	?>
 	</select>
-	<!-- And this is the button "Add ingredients" that adds to the array of ingredients, using the js script -->
-	<!-- 5.07 min i videon, "connectIngredientsRecipe" är button ID i js script. 8.47 min  -->
 	<button id="connectIngredientsRecipe" for="ingredients">Add Ingredients</button></br>
 
 
-	<!-- Göra en drop down för catID och för våra tre kategorier -->
 	<!--<INPUT type="text" required placeholder="Upload image" name="image"></br>-->
 	<!-- <INPUT type="text" required placeholder="Recipe Name" name="userid"></br> -->
 	<!-- User ska vara inloggad när den lägger till recept, ska skickas med automatiskt -->
 
 	<!-- HÄR KOMMER CATEGORY-DROPDOWNEN -->
-	<!-- This is where we use script, in this 'ul' tag. Är div:en i js script -->
 	<ul id="categoryToRecipe"></ul>
 
 	<!--This is where we select all categories from the DB and present 
 	them as options in a dropdown list-->
-	<select id="categories" name="categories[]" id="categories">
+	<select id="categories" name="category" id="category">
 	<?php
-		 while ($stmt->fetch()) {
-		 	echo "<option value='".$catid."'>".$catname."</option>";
-		 }
+
+	//Query to get all categories
+	$getCategories = "SELECT * FROM categories";
+
+	$stmt_cat = $db->prepare($getCategories);
+	$stmt_cat->bind_result($catid, $catname);
+	$stmt_cat->execute();
+
+	while ($stmt_cat->fetch()) {
+		echo "<option value='".$catid."'>".$catname."</option>";
+		}
 	?>
 	</select>
 
-	<button id="connectCategoryRecipe" for="categories">Add Category</button></br>
 	<INPUT type="submit" name="newrecipe" value="Send">
 
 </form>
