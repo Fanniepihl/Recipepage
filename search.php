@@ -1,11 +1,13 @@
 <?php include("header.php") ?>
 <?php include("config.php") ?>
 
+
 <body>
-<h2>Choose a category</h2>
+
+<fieldset><h2>Choose a category</h2>
     
     
-<div class="container"><!---contaner är boxen som fish bilden och texten ligger i--->
+<div class="container"><!---contaner är boxen som fish bilden och texten ligger i-->
   <img img src="img/fish1.png" class="image">
   <a href="fish.php">
       <div class="overlay">
@@ -32,7 +34,10 @@
       </a><!--end link--->
 </div><!--end container-->
 
+</fieldset>
 
 </body>
+       		
+
 
 <?php include("footer.php") ?>

@@ -74,14 +74,14 @@ $newcatid = $_POST['catid'];
 $addRecipe ="INSERT INTO recipe(title, description, catid) VALUES (?, ?, ?, ?)"; //image också efter catid
 
 //New book with AutoIncrement ID is added.
-//Last one is 50
+//Last one is 50										longblob for image
 $stmt = $db->prepare($addRecipe);
-$stmt->bind_param('ssi', $title, $description, $catid); //$image
+$stmt->bind_param('ssi', $title, $description, $catid); //$image 
 $stmt->execute();
 
 $recipeid = mysqli_insert_id($db);
 
-//Echo under här outar nästa nummer i listan vi har 50 så då blire nästa 51 auto..
+//Echo under här autoincrement nästa nummer i listan vi har 50 så då blire nästa 51 auto..
 //echo $recipeid
 //                                 $id kommer från en specifik ingrediens som sänds
 //									från listan i js filen (addade ingredienser)

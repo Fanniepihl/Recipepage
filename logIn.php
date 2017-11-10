@@ -74,9 +74,6 @@ if (isset($_POST['username'], $_POST['userpass'])) {
         setcookie('username',$uname, time()+60*60*7);
         
         }
-    
-    
-   
 }   
 ?>
 
@@ -121,25 +118,3 @@ if (isset($_POST['username'], $_POST['userpass'])) {
     </table>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

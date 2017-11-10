@@ -175,7 +175,7 @@ a.active {
 */
 
 
-/* FISH PAGE & FAVOURITES */
+/* FISH, PASTA and STEAK PAGE & FAVOURITES */
 table, th, td {
     border: 1px solid white;
     border-collapse: collapse;
@@ -191,11 +191,24 @@ th {
 
 table {
     border-spacing: 5px;
+    
 }
 
 table#t01 tr:nth-child(even) {
     background-color: #696969;
 }
+
+
+
+/* fish.php pasta.php steak.php */
+main.field {
+  margin-top: 70px;
+}
+
+
+
+
+
 
 /* CONTAINER */ 
 

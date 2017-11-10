@@ -1,6 +1,6 @@
 <?php
 
-include("config.php");
+include ("config.php");
 
 
 $recipeid = trim($_GET['recipeid']);
@@ -8,6 +8,7 @@ echo '<INPUT type="hidden" name="recipeid" value=' . $recipeid . '>';
 
 $recipeid = trim($_GET['recipeid']);      // From the hidden field
 $recipeid = addslashes($recipeid);
+
 
 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -17,16 +18,16 @@ $recipeid = addslashes($recipeid);
         exit();
     }
     
-   echo "You are removing recipe with the ID:"           .$recipeid;
+   echo "You are adding a recipe with the ID:"           .$recipeid;
 
-
-    // Prepare an update statement and execute it
-    $stmt = $db->prepare("UPDATE recipe SET onloan=0 WHERE recipeid = ?");
+    // Prepare an update statement and execute it                
+    $stmt = $db->prepare("UPDATE recipe SET onloan=1 WHERE recipeid = ?");
     $stmt->bind_param('i', $recipeid);
     $stmt->execute();
-    printf("<br>Succesfully returned!");
-    printf("<br><a href=favourites.php>Return to Favorites </a>");
+    printf("<br>Recipe added!");
+    printf("<br><a href=steak.php>Search for more Steak Recipes </a>");
     printf("<br><a href=index.php>Return to home page </a>");
     exit;
+    
 
 ?>

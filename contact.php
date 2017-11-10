@@ -7,7 +7,7 @@
     </div> 
     
     
-<!--- Forumlär för att kunna kontakta oss--->
+<!-- Forumlär för att kunna kontakta oss-->
 <?php
 $action=$_REQUEST['action'];
 if ($action=="")    /* display the contact form */
@@ -16,9 +16,9 @@ if ($action=="")    /* display the contact form */
     <form  action="" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="action" value="submit">
     Your name:<br>
-    <input name="name" type="text" value="" size="30"/><br>
+    <input name="name" type="text" value="" size="30"/><br><br>
     Your email:<br>
-    <input name="email" type="text" value="" size="30"/><br>
+    <input name="email" type="text" value="" size="30"/><br><br>
     Your message:<br>
     <textarea name="message" rows="7" cols="30"></textarea><br>
     <input type="submit" value="Send email"/>
