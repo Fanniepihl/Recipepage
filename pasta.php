@@ -55,15 +55,15 @@
 						// " SELECT recipeid, title, ingredients, onloan " // SELECT * FROM recipe
 
 				$query = " SELECT recipeid, title, ingredients, description, onloan, image FROM recipe";
-				if ($searchtitle && !$searchingredients) { // Title search only
-				    $query = $query . " Where title like '%" . $searchtitle . "%'";
-				}
-				if (!$searchtitle && $searchingredients) { // Author search only
-				    $query = $query . " Where ingredients like '%" . $searchingredients . "%'";
-				}
-				if ($searchtitle && $searchingredients) { // Title and Author search
-				    $query = $query . " Where title like '%" . $searchtitle . "%' and ingredients like '%" . $searchingredients . "%'"; 
-				} 
+				//if ($searchtitle && !$searchingredients) { // Title search only
+				 //   $query = $query . " Where title like '%" . $searchtitle . "%'";
+				//}
+				//if (!$searchtitle && $searchingredients) { // Author search only
+				  //  $query = $query . " Where ingredients like '%" . $searchingredients . "%'";
+				//}
+				//if ($searchtitle && $searchingredients) { // Title and Author search
+				//    $query = $query . " Where title like '%" . $searchtitle . "%' and ingredients like '%" . $searchingredients . "%'"; 
+				//} 
 
 				
 

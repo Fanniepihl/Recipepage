@@ -29,7 +29,11 @@
         	$searchtitle = "";
         	$searchingredients = "";
 
-            if (isset($_POST) && !empty($_POST)) {
+        	$catid = trim($_GET['catid']);
+
+				echo $catid;
+
+            
                 
                 $searchtitle = trim($_POST['searchtitle']);
                 $searchingredients = trim($_POST['searchingredients']);
@@ -51,18 +55,13 @@
 				    exit();
 				}
 
-						// " SELECT recipeid, title, ingredients, onloan " // SELECT * FROM recipe
+				
 
-				$query = " SELECT recipeid, title, ingredients, description, onloan, image FROM recipe";
-				if ($searchtitle && !$searchingredients) { // Title search only
-				    $query = $query . " Where title like '%" . $searchtitle . "%'";
-				}
-				if (!$searchtitle && $searchingredients) { // Author search only
-				    $query = $query . " Where ingredients like '%" . $searchingredients . "%'";
-				}
-				if ($searchtitle && $searchingredients) { // Title and Author search
-				    $query = $query . " Where title like '%" . $searchtitle . "%' and ingredients like '%" . $searchingredients . "%'"; 
-				} 
+
+						// " Select from recipes from the databas 
+
+				$query = " SELECT recipeid, title, ingredients, description, onloan, image FROM recipe WHERE catid={$catid}";
+				
 
 				
 
@@ -86,7 +85,7 @@
         
 	   		}
 	    	echo "</table>";
-			}
+			
 	    	?>
 
 	    	</fieldset>
