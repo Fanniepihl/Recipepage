@@ -109,6 +109,13 @@ a.active {
     list-style: none;
     float: left;
 }
+
+#start_text{
+    margin-left: 400px;
+    margin-right: 400px;
+    
+}
+/*
 .search-title {
   font-family: 'Playfair Display', serif;
   color: white;
@@ -128,7 +135,7 @@ a.active {
   margin-top: 4px;
 }
 
-.searchTerm {
+#searchrecipe {
   float: left;
   width: 100%;
   border: 1px solid #fff;
@@ -165,6 +172,43 @@ a.active {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+*/
+
+
+/* FISH, PASTA and STEAK PAGE & FAVOURITES */
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+}
+
+th {
+    text-align: left;
+}
+
+table {
+    border-spacing: 5px;
+    
+}
+
+table#t01 tr:nth-child(even) {
+    background-color: #696969;
+}
+
+
+
+/* fish.php pasta.php steak.php */
+main.field {
+  margin-top: 70px;
+  
+}
+
+
+
+
 
 
 /* CONTAINER */ 
@@ -231,7 +275,7 @@ h2 {
     text-align: center;
     margin: 0;
     color: white;
-    font-size: 50px;
+    font-size: 30px;
     padding-top: 60px;
 }
 

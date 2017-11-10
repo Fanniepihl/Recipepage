@@ -1,5 +1,10 @@
 <?php include("header.php") ?>
-<?php include("config.php") ?>
+<?php include("config.php"); 
+
+session_start();
+ob_start();
+
+?>
 
 <h1 class="">Sign in</h1>
 
@@ -7,26 +12,19 @@
 
 <?php
 
+//this function is for older PHP versions that use Magic Quotes.
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    function escapestring($input) {
+    if (get_magic_quotes_gpc()) {
+    $input = stripslashes($input);
+    }
 
-#this function is for older PHP versions that use Magic Quotes.
-#
-//    function escapestring($input) {
-//    if (get_magic_quotes_gpc()) {
-//    $input = stripslashes($input);
-//    }
-//
-//    @ $db = new mysqli('localhost', 'root', '', 'testinguser');
-//
-//
-//    return mysqli_real_escape_string($db, $input);
-//
-//    }
+    @ $db = new mysqli('localhost', 'root', '', 'testinguser');
+
+
+    return mysqli_real_escape_string($db, $input);
+
+    }
 
 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -35,11 +33,6 @@ if ($db->connect_error) {
     printf("<br><a href=index.php>Return to home page </a>");
     exit();
 }
-
-    #the mysqli_real_espace_string function helps us solve the SQL Injection
-    #it adds forward-slashes in front of chars that we can't store in the username/pass
-    #in order to excecute a SQL Injection you need to use a ' (apostrophe)
-    #Basically we want to output something like \' in front, so it is ignored by code and processed as text
 
 if (isset($_POST['username'], $_POST['userpass'])) {
     #with statement under we're making it SQL Injection-proof
@@ -64,8 +57,6 @@ if (isset($_POST['username'], $_POST['userpass'])) {
     //echo '</br>';
     //echo $upass;
     
-    #just to see what we are selecting, and we can use it to test in phpmyadmin/heidisql
-    
     #echo "SELECT * FROM user WHERE username = '{$uname}' AND userpass = '{$upass}'";
     
     $query = ("SELECT * FROM user WHERE username = '{$uname}' "."AND userpass = '{$upass}'");
@@ -79,11 +70,12 @@ if (isset($_POST['username'], $_POST['userpass'])) {
     #one user with the right combination. If there is, we later on print out "access granted"
     $totalcount = $stmt->num_rows();
     
-    
-    
-}
+    if(isset($_POST['remember'])){ 
+        setcookie('username',$uname, time()+60*60*7);
+        
+        }
+}   
 ?>
-<!DOCTYPE html>
 
 <html>
     <head>
@@ -100,14 +92,29 @@ if (isset($_POST['username'], $_POST['userpass'])) {
                 echo '<h2>You got it wrong. Can\'t break in here!</h2>';
             } else {
                 echo '<h2>Welcome! Correct password.</h2><a href="myrecipes.php"><h3>Upplode your recipie here</h3></a>';
+                $_SESSION['username'] = $uname;
+    echo "<script>window.location.href='myrecipes.php'</script>";
          
             }
         }
         ?>
+        <style type="text/css"> 
+            th{
+                text-align: center;
+            }
+            h3{
+                text-align: center;
+            }
+        
+        
+        </style>
+        <table cellpadding="10" cellspacing="10" align="center"> 
         <form method="POST" action="">
-            <input type="text" name="username">
-            <input type="password" name="userpass">
-            <input type="submit" value="Go">
+            <tr><th>Username<input type="text" name="username" align="center" cellpadding="5"></th></tr>
+            <tr><th>Password<input type="password" name="userpass" align="center" cellpadding="5"></th></tr>
+            <tr><th colspan="2" align="center"><input type="checkbox" name="remember" value="1">Remember Me</th></tr>
+            <tr><th colspan="2" align="center"><input type="submit" name="login" value="Login"></th></tr>
         </form>
+    </table>
     </body>
 </html>

@@ -4,18 +4,14 @@
    
 <div id="bread"> 
   <h1 class="bread-titel">bread.</h1>
-  <div class="wrap">
-    <p class="search-title">What are you feeling for today?</p>
-    <div class="search">
-      <input type="text" class="searchTerm" placeholder="Search muthafuckin' recipes">
-      <button type="submit" class="searchButton">
-        <!--<i class="fa fa-search"></i>-->
-        <img src="img/magnifying.png" class="magnify"/>
-     </button>
-    </div><!---search-title-->
-  </div><!--end wrap-->
+    <div id="start_text"><h2>Welcome to bread. <br>
+Here you can easily find fine recipes for all kinds of tastes. <br>
+        Save your favorites from all different kinds of recipes and upload your own recipe for other people to find. 
+</h2>
+ </div><!--end start_text-->
 </div> <!--end bread--> 
-
+    
+   
 
 
 <?php include('footer.php') ?>
