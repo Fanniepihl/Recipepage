@@ -9,7 +9,7 @@
     
 <div class="container"><!---contaner är boxen som fish bilden och texten ligger i-->
   <img img src="img/fish1.png" class="image">
-  <a href="listrecipes.php">
+  <a href="listrecipes.php" $catid=1 >
       <div class="overlay">
     <div class="text">Fish</div><!--end class text-->
   </div><!--end class overlay-->

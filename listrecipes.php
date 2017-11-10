@@ -28,12 +28,14 @@
 
        		<?php
 
+       		
+
         	$searchtitle = "";
         	$searchingredients = "";
 
         	$catid = trim($_GET['catid']);
 
-				echo $catid;
+				echo $catid=1;
 
             
                 
@@ -83,16 +85,19 @@
 		        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $ingredients </td> <td> $description </td><td> $onloan </td>";
 		        echo '<td><a href="addrecipesfish.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Add"></input></a></td>';
 		        echo "</tr>";
-
+		        
         
 	   		}
 	    	echo "</table>";
 			
+
 	    	?>
 	    	</fieldset>
 
+
 			<!-- HÄR AVSLUTAS FISK RECIPES!! -->
 	    
+
 
 
 	    	<!-- HÄR BÖRJAR PASTA RECIPES!! -->
@@ -123,7 +128,7 @@
 
         	$catid = trim($_GET['catid']);
 
-				echo $catid;
+				echo $catid=2;
 
 
 
@@ -194,6 +199,7 @@
 
 
 
+
 	    	<!-- HÄR BÖRJAR STEAK RECIPES!! -->
 
 	    	<form action="listrecipes.php" method="POST">
@@ -222,7 +228,7 @@
 
         	$catid = trim($_GET['catid']);
 
-				echo $catid;
+				echo $catid=3;
 
 
 
@@ -293,8 +299,8 @@
 
 	    	<!-- HÄR AVSLUTAS STEAK RECIPES!! -->
 
-		
-	</main>
+</main>		
+	
 
 
 <?php include("footer.php") ?>
