@@ -109,6 +109,13 @@ a.active {
     list-style: none;
     float: left;
 }
+
+#start_text{
+    margin-left: 400px;
+    margin-right: 400px;
+    
+}
+/*
 .search-title {
   font-family: 'Playfair Display', serif;
   color: white;
@@ -165,6 +172,7 @@ a.active {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+*/
 
 
 /* FISH PAGE & FAVOURITES */
@@ -253,7 +261,7 @@ h2 {
     text-align: center;
     margin: 0;
     color: white;
-    font-size: 50px;
+    font-size: 30px;
     padding-top: 60px;
 }
 
