@@ -5,11 +5,11 @@
 <body>
 
 <fieldset><h2>Choose a category</h2>
-    
+  
     
 <div class="container"><!---contaner är boxen som fish bilden och texten ligger i-->
   <img img src="img/fish1.png" class="image">
-  <a href="listrecipes.php" $catid=1 >
+  <a href="listrecipes.php">
       <div class="overlay">
     <div class="text">Fish</div><!--end class text-->
   </div><!--end class overlay-->

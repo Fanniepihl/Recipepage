@@ -8,7 +8,7 @@
 	<!--  HÄR BÖRJAR FISK RECEPTEN!! -->
 
 <main class="field">
-			<form action="listrecipes.php" method="POST">
+			<form action="listrecipes.php" method="GET">
 				<fieldset>
 					<legend><h3>Browse recipes:</h3></legend><br>
 			    	<table bgcolor="#ffffff">
@@ -85,7 +85,7 @@
 		        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $ingredients </td> <td> $description </td><td> $onloan </td>";
 		        echo '<td><a href="addrecipesfish.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Add"></input></a></td>';
 		        echo "</tr>";
-		        
+
         
 	   		}
 	    	echo "</table>";
@@ -100,9 +100,9 @@
 
 
 
-	    	<!-- HÄR BÖRJAR PASTA RECIPES!! -->
+	    	<!-- HÄR BÖRJAR PASTA RECIPES!!     method="POST" vare innan-->
 
-	    		<form action="listrecipes.php" method="POST">
+	    		<form action="listrecipes.php" method="GET">
 				<fieldset>
 					<legend><h3>Browse recipes:</h3></legend><br>
 			    	<table bgcolor="#ffffff">
@@ -202,7 +202,7 @@
 
 	    	<!-- HÄR BÖRJAR STEAK RECIPES!! -->
 
-	    	<form action="listrecipes.php" method="POST">
+	    	<form action="listrecipes.php" method="GET">
 				<fieldset>
 					<legend><h3>Browse recipes:</h3></legend><br>
 			    	<table bgcolor="#ffffff">
