@@ -11,7 +11,7 @@
 <main>
 			<!--  This is a form so every recipe that has been addaed from the different categories will show up -->
 		
-		<form action="showfish.php, showpasta.php, showsteak.php" method="POST">
+		<form action="showlistrecipes.php" method="POST">
 			<table id="t01" style="width:100%">
 			
 			</table>
