@@ -111,7 +111,6 @@ if ($db->connect_error) {
 
 $newtitle = $_POST['newtitle'];
 $newdescription = $_POST['newdescription'];
-$newingredientsid = $_POST['ingredients'];
 $newcatid = $_POST['category'];
 $ingredientsids = $_POST['ingredients']; //kanske ska vara ingredientsidS 
 //$newimage = $_POST['image'];
@@ -123,13 +122,13 @@ echo $newcatid;
 echo $ingredientsids;
 
 
-$newrecipe ="INSERT INTO recipe(title, description, ingredientsid, catid) VALUES (?, ?, ?, ?)"; //image också efter catid
+$newrecipe ="INSERT INTO recipe(title, description, catid) VALUES (?, ?, ?)"; //image också efter catid
 echo $newrecipe;
 
 //New book with AutoIncrement ID is added.
 //Last one is 50
 $stmt = $db->prepare($newrecipe);
-$stmt->bind_param('ssii', $newtitle, $newdescription, $newingredientsid, $newcatid); //$image
+$stmt->bind_param('ssi', $newtitle, $newdescription, $newcatid); //$image
 $stmt->execute();
 
 $newrecipeid = mysqli_insert_id($db); //kanske ska vara receptid
@@ -145,6 +144,8 @@ echo $newrecipeid;
 foreach ($ingredientsids as $index => $id) {
 	
 	@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+
 
 	$add_recing = "INSERT INTO recing(recipeid,ingredientsid) VALUES('$newrecipeid','$id')";
 
@@ -169,7 +170,7 @@ foreach ($ingredientsids as $index => $id) {
 	<!-- This is where we select all ingredients from the DB and present 
 	them as options in a dropdown list -->
 <!-- Ändra denna för att recing ska fungera -->
-	<select name="ingredients" name="ingredients[]" id="ingredients">
+	<select id="ingredients" name="ingredients[]">
 	<?php
 		 while ($stmt->fetch()) {
 		 	echo "<option value='".$ingredientsid."'>".$name."</option>";

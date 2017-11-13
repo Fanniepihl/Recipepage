@@ -4,7 +4,7 @@
 
 <body>
 
-<fieldset><h2>Choose a category</h2>
+<h2>Choose a category</h2>
   
     
 <div class="container"><!---contaner är boxen som fish bilden och texten ligger i-->
@@ -35,7 +35,6 @@
 </div><!--end container-->
 
 
-</fieldset>
 
 </body>
      
