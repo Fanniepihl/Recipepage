@@ -9,7 +9,6 @@ echo '<INPUT type="hidden" name="recipeid" value=' . $recipeid . '>';
 $recipeid = trim($_GET['recipeid']);      // From the hidden field
 $recipeid = addslashes($recipeid);
 
-
 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
     if ($db->connect_error) {
