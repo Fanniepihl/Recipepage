@@ -33,6 +33,15 @@ a.active {
 	font-weight: 900;
 	color: black;
 }
+#start_text h2 {
+   font-family: 'Playfair Display', serif;  
+    text-align: center;
+}
+#start_text{
+    margin-left: 400px;
+    margin-right: 400px;
+    
+}
 
 /* Headerbilder*/
 #bread{
@@ -110,11 +119,6 @@ a.active {
     float: left;
 }
 
-#start_text{
-    margin-left: 400px;
-    margin-right: 400px;
-    
-}
 /*
 .search-title {
   font-family: 'Playfair Display', serif;
