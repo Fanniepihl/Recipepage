@@ -118,3 +118,4 @@ if (isset($_POST['username'], $_POST['userpass'])) {
     </table>
     </body>
 </html>
+<?php include("footer.php") ?>
