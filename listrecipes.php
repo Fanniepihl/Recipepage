@@ -42,9 +42,6 @@
                 $searchingredients = htmlentities($searchingredients);
 
 
-                //$id = array_serach($catid, array_column($catid,'1'))
-
-               // $ingredientsid = array_search($searchingredients, array_column($recipe, 'ingredients'));
 
                 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
