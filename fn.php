@@ -213,7 +213,7 @@ foreach ($ingredientsids as $index => $id) {
 <!-- ADD INGREDIENTS IN DROP DOWN HERE -->
 <form action="fn.php" method="POST">
 	<h2>Add Ingredients</h2>
-	<INPUT type="number" required placeholder="Id" id="newingredientsid" name="newingredientsid"></br>
+	<!--<INPUT type="number" required placeholder="Id" id="newingredientsid" name="newingredientsid"></br>-->
 	<INPUT type="text" required placeholder="Name" id="newname" name="newname"></br></br>
 	<!--<INPUT type="submit" id="newingredients" name="newingredients" value="Send">-->
 	<INPUT type="submit" name="newingredients" value="Send">
@@ -221,7 +221,7 @@ foreach ($ingredientsids as $index => $id) {
 
 <form action="fn.php" method="POST">
 	<h2>Add Category</h2>
-	<INPUT type="number" required placeholder="Id" id="newcatid" name="newcatid"></br>
+	<!--<INPUT type="number" required placeholder="Id" id="newcatid" name="newcatid"></br>-->
 	<INPUT type="text" required placeholder="Name" id="newcatname" name="newcatname"></br></br>
 	<!--<INPUT type="submit" id="newingredients" name="newingredients" value="Send">-->
 	<INPUT type="submit" name="newcategories" value="Send">

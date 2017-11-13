@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		newHidden.value = ingredients[ingredients.selectedIndex].value;
 		newHidden.name = "ingredients[]";
 		div.appendChild(newHidden);
-		ingredients.removeChild(ingredients.selectedIndex);	
+		ingredients.removeChild(ingredients[ingredients.selectedIndex]);	
 
 	})
 
