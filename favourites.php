@@ -61,6 +61,8 @@
 		            $onloan="No";
 		        else $onloan="Yes";
 
+
+		        //mellanrum mellan ingredients
 		        $grouped_ing = str_replace(",", ", ", $grouped_ing);
 		       
 		       
