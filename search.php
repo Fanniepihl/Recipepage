@@ -6,8 +6,9 @@
 
 <h2>Choose a category</h2>
   
+  <!-- tre boxar med de olika kategorierna vi valt. Varje kategori/bildbox är kopplad till databasens tre olika katergorier(fisk, steak, pasta) så när du klickar in på kagetorin/bildboxen ex: 'pasta' så kommer alla recept som är tillagda i pasta kategorin dyka upp i listreipes.php! -->
     
-<div class="container"><!---contaner är boxen som fish bilden och texten ligger i-->
+<div class="container">
   <img img src="img/fish1.png" class="image">
   <a href="listrecipes.php?catid=1">
       <div class="overlay">

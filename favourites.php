@@ -5,13 +5,11 @@
 
 <h2> Here is your favorite recipes</h2>
 
-<!-- <h3>To see your favorite recipes you need to logg in</h3>  
-    <button><a href="logIn.php" >Logg in here</a></button> -->
 
 </body>
 
 <main>
-	
+			<!--  This is a form so every recipe that has been addaed from the different categories will show up -->
 		
 		<form action="showfish.php, showpasta.php, showsteak.php" method="POST">
 			<table id="t01" style="width:100%">
@@ -45,11 +43,10 @@
 		    printf("<br><a href=index.php>Return to home page </a>");
 		    exit();
 		}
+		
 
 		# Build the query. Users are allowed to search on title, author, or both
 		
-
-
 		$query = " SELECT recipeid, title, ingredients, onloan, image FROM recipe WHERE onloan = 1";
 			if ($searchtitle && !$searchingredients) { // Title search only
 			$query = $query . " Where title like '%" . $searchtitle . "%'";
@@ -63,14 +60,12 @@
 
 		 
 
-	# Here's the query using bound result parameters
+		# Here's the query using bound result parameters
 	    // echo "we are now using bound result parameters <br/>";
 	    $stmt = $db->prepare($query);
 		$stmt->bind_result($recipeid, $title, $ingredients, $onloan, $image);
 		$stmt->execute();
 	    
-	//    $stmt2 = $db->prepare("update onloan set 0 where bookid like ". $bookid);
-	//    $stmt2->bind_result($onloan, $bookid);
 	    
 
 	    echo '<table id="t01" style="width:100%" >';

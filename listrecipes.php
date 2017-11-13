@@ -55,7 +55,7 @@
 				}
 
 
-						// " Select from recipes from the databas 
+						// # Build the query. Users are allowed to search on title, ingredients, or both
 
 				$query = " SELECT recipeid, title, ingredients, description, onloan, image FROM recipe WHERE catid={$catid}";
 					if ($searchtitle && !$searchingredients) { // Title search only
