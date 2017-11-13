@@ -258,13 +258,11 @@ foreach ($ingredientsids as $index => $id) {
 
 		//}
 
-
-
  
 		echo '<table id="t01" style="width:100%" >';
 		echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Description</td> <td>Ingredients</td> <td>Category</td> <td>Added?</td> </b> <td>Add</td> </b></tr>';
 	        echo "<tr>";
-	        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td>$title</td> <td>$description</td> <td>$ingredients</td> <td>$catid</td> <td>$onloan</td>";
+	        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td>$title</td> <td>$description</td> <td>$ingredientsid</td> <td>$catid</td> <td>$onloan</td>";
 	        echo '<td><a href="removerecipe.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Remove"></input></a></td>';
 	        echo "</tr>";
 	    echo "</table>";
