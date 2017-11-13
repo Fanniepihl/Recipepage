@@ -249,19 +249,24 @@ foreach ($ingredientsids as $index => $id) {
 		    printf("<br><a href=index.php>Return to home page </a>");
 		    exit();
 		}
+
+		//$result = $db->query($newrecipe);
+		//echo "<p> $result->num_rows matching books found </p>";
+		//echo "<table border=1>";
+		//while($row = $result->fetch_assoc()) {
+		//echo "<tr><td>" . $row['image'] . "</td> <td>" . $row['recipeid'] . "</td><td>" . $row['title'] . "</td><td>" . $row['description'] . "</td><td>" . $row['ingredients'] . "</td><td>" . $row['category'] . "</td></tr>";
+
+		//}
+
+
+
  
 		echo '<table id="t01" style="width:100%" >';
-		echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Ingredients</td> <td>Added?</td> </b> <td>Add</td> </b></tr>';
-	    while ($stmt->fetch()) {
-	        if($onloan==0)
-		            $onloan="No";
-		        else $onloan="Yes";
+		echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Description</td> <td>Ingredients</td> <td>Category</td> <td>Added?</td> </b> <td>Add</td> </b></tr>';
 	        echo "<tr>";
-	        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $ingredients </td><td> $onloan </td>";
+	        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td>$title</td> <td>$description</td> <td>$ingredients</td> <td>$catid</td> <td>$onloan</td>";
 	        echo '<td><a href="removerecipe.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Remove"></input></a></td>';
 	        echo "</tr>";
-	        
-	    }
 	    echo "</table>";
 
 	  	?>
