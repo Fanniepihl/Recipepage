@@ -119,65 +119,6 @@ a.active {
     float: left;
 }
 
-/*
-.search-title {
-  font-family: 'Playfair Display', serif;
-  color: white;
-  font-weight: 600;
-  font-size: 20px;
-  margin: 0;
-}
-
-.search {
-  width: 100%;
-  position: relative;
-  margin-top: 10px;
-}
-
-.magnify {
-  width: 18px;
-  margin-top: 4px;
-}
-
-#searchrecipe {
-  float: left;
-  width: 100%;
-  border: 1px solid #fff;
-  padding: 5px;
-  height: 20px;
-  border-radius: 1px;
-  outline: none;
-  color: brown;
-}
-
-.searchTerm:focus{
-  color: #000;
-}
-
-.searchButton {
-  position: absolute;
-  bottom: -32px;  
-  right: -50px;
-  width: 40px;
-  height: 32px;
-  border: 1px solid #fff;
-  background: #fff;
-  text-align: center;
-  color: #fff;
-  border-radius: 1px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.wrap{
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-*/
-
 
 /* FISH, PASTA and STEAK PAGE & FAVOURITES */
 table, th, td {
@@ -222,7 +163,7 @@ main.field {
   width: 30%;
   margin-top: 30px;
   margin-bottom: 50px;
-    margin-left: 45px;
+    margin-left: 30px;
     float: left;
 
 }
