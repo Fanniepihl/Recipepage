@@ -181,7 +181,7 @@ foreach ($ingredientsids as $index => $id) {
 	<!-- This is where we select all ingredients from the DB and present 
 	them as options in a dropdown list -->
 <!-- Ändra denna för att recing ska fungera -->
-	<select id="ingredients" name="ingredients[]">
+	<select id="ingredients" name="dont-include">
 	<?php
 		 while ($stmt->fetch()) {
 		 	echo "<option value='".$ingredientsid."'>".$name."</option>";
@@ -215,7 +215,7 @@ foreach ($ingredientsids as $index => $id) {
 		}
 	?>
 	</select>
-
+	<!--<button id="connectCategoryRecipe" for="category">Add Category</button></br>-->
 	<INPUT type="submit" name="newrecipe" value="Send">
 
 </form>

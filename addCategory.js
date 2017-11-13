@@ -3,19 +3,21 @@ document.addEventListener("DOMContentLoaded", function () {
 	document.getElementById('connectCategoryRecipe').addEventListener('click', function (e) {
 		e.preventDefault();
 		var div = document.getElementById('categoryToRecipe');
-		var categories = document.getElementById('categories');
+		var category = document.getElementById('category');
 		var newText = document.createElement("li");
-		categories.selectedIndex
-		newText.innerText = categories[categories.selectedIndex].innerText;
+		category.selectedIndex
+		newText.innerText = category[category.selectedIndex].innerText;
 		div.appendChild(newText);
-		hiddenValue = categories[categories.selectedIndex].value;
+		hiddenValue = category[category.selectedIndex].value;
 		newHidden = document.createElement("input");
 		newHidden.type = "hidden";
-		newHidden.value = categories[categories.selectedIndex].value;
-		newHidden.name = "categories[]";
+		newHidden.value = category[category.selectedIndex].value;
+		newHidden.name = "category";
 		div.appendChild(newHidden);
-		categories.removeChild(categories.selectedIndex);	
+		category.removeChild(category[category.selectedIndex]);	
 
 	})
 
 })
+
+//ändrat alla från categories till category
