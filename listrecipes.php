@@ -6,40 +6,13 @@
 </body>
 
 <main class="field">
-			<form action="listrecipes.php" method="POST">
-				<fieldset>
-					<legend><h3>Browse recipes:</h3></legend><br>
-			    	<table bgcolor="#ffffff">
-			    		<tbody>
-			    		Recipe:<br>
-			    		<INPUT type="text" id="searchtitle" name="searchtitle" value=""><br>
-			    		Ingredients:<br>
-			    		<INPUT type="text" id="searchingredients" name="searchingredients" value=""><br><br>
-			    		<INPUT type="submit" name="submit" value="Search">
-			    	</table>
-			  	</fieldset>
-			</form>
-	
-			<br><br>
+
 			<fieldset><legend><h3>Recipes:</h3></legend>
 
 
        		<?php
 
-        	$searchtitle = "";
-        	$searchingredients = "";
-
         	$catid = trim($_GET['catid']);
-
-                
-                $searchtitle = trim($_POST['searchtitle']);
-                $searchingredients = trim($_POST['searchingredients']);
-               
-                $searchtitle = addslashes($searchtitle);
-                $searchingredients = addslashes($searchingredients);
-
-                $searchtitle = htmlentities($searchtitle);
-                $searchingredients = htmlentities($searchingredients);
 
 
 
@@ -51,23 +24,10 @@
 				    exit();
 				}
 
-
-						// # Build the query. Users are allowed to search on title, ingredients, or both
-
-				$query = " SELECT recipeid, title, ingredients, description, onloan, image FROM recipe WHERE catid={$catid}";
-					if ($searchtitle && !$searchingredients) { // Title search only
-				    $query = $query . " Where title like '%" . $searchtitle . "%'";
-					}
-					if (!$searchtitle && $searchingredients) { // Ingredients search only
-				    $query = $query . " Where ingredients like '%" . $searchingredients . "%'";
-					}
-					if ($searchtitle && $searchingredients) { // Title and Ingredients search
-				    $query = $query . " Where title like '%" . $searchtitle . "%' and ingredients like '%" . $searchingredients . "%'"; 
-				} 
-
-
+				$query = "SELECT recipe.recipeid, recipe.title, recipe.description, recipe.onloan, recipe.image, GROUP_CONCAT(ingredients.name) as als FROM recipe, recing, ingredients WHERE recipe.catid=? AND recipe.recipeid = recing.recipeid AND recing.ingredientsid = ingredients.ingredientsid GROUP BY recipe.recipeid";
 				$stmt = $db->prepare($query);
-			    $stmt->bind_result($recipeid, $title, $ingredients, $description, $onloan, $image);
+				$stmt->bind_param('i', $catid);
+			    $stmt->bind_result($recipeid, $title, $description, $onloan, $image, $grouped_ing);
 			    $stmt->execute();
 
 
@@ -77,10 +37,13 @@
 		        if($onloan==0)
 		            $onloan="No";
 		        else $onloan="Yes";
-		       
-		       
+;
+		       //För att få mellanrum i ingredients 
+		       	$grouped_ing = str_replace(",", ", ", $grouped_ing);
+
+
 		        echo "<tr>";
-		        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $ingredients </td> <td> $description </td><td> $onloan </td>";
+		        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $grouped_ing </td> <td> $description </td><td> $onloan </td>";
 		        echo '<td><a href="addrecipes.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Add"></input></a></td>';
 		        echo "</tr>";
 
