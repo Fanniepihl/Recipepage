@@ -47,7 +47,7 @@
 
 		# Build the query. Users are allowed to search on title, author, or both
 		
-		$query = " SELECT recipeid, title, ingredients, onloan, image FROM recipe WHERE onloan = 1";
+		$query = " SELECT recipeid, title, ingredients, description, onloan, image FROM recipe WHERE onloan = 1";
 			if ($searchtitle && !$searchingredients) { // Title search only
 			$query = $query . " Where title like '%" . $searchtitle . "%'";
 				}
@@ -62,28 +62,27 @@
 
 		# Here's the query using bound result parameters
 	    // echo "we are now using bound result parameters <br/>";
-	    $stmt = $db->prepare($query);
-		$stmt->bind_result($recipeid, $title, $ingredients, $onloan, $image);
-		$stmt->execute();
-	    
-	    
+	    		$stmt = $db->prepare($query);
+			    $stmt->bind_result($recipeid, $title, $ingredients, $description, $onloan, $image);
+			    $stmt->execute();
 
-	    echo '<table id="t01" style="width:100%" >';
-		echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Ingredients</td> <td>Added?</td> </b> <td>Add</td> </b></tr>';
-	    while ($stmt->fetch()) {
-	        if($onloan==0)
+
+			echo '<table id="t01" style="width:100%" >';
+		    echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Ingredients</td> <td>description</td> <td>Added?</td> </b> <td>Add</td> </b></tr>';
+		    while ($stmt->fetch()) {
+		        if($onloan==0)
 		            $onloan="No";
 		        else $onloan="Yes";
-	       
-	   
+		       
+		       
+		        echo "<tr>";
+		        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $ingredients </td> <td> $description </td><td> $onloan </td>";
+		        echo '<td><a href="addrecipes.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Add"></input></a></td>';
+		        echo "</tr>";
 
-	        echo "<tr>";
-	        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $ingredients </td><td> $onloan </td>";
-	        echo '<td><a href="removerecipe.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Remove"></input></a></td>';
-	        echo "</tr>";
-	        
-	    }
-	    echo "</table>";
+        
+	   		}
+	    	echo "</table>";
 	    
 
 	    ?>
