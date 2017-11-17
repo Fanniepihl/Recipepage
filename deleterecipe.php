@@ -22,7 +22,7 @@ if (isset($_GET['submit'])) {
 
     // Prepare an update statement and execute it
     
-        $stmt = $db->prepare("delete from myrecipes where recipeid = ?");
+        $stmt = $db->prepare("delete from recipe where recipeid = ?");
         $stmt->bind_param('i', $recipeid);
         $response = $stmt->execute();
         printf("<br>Recipe deleted!");

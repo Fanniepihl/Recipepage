@@ -261,7 +261,7 @@ foreach ($ingredientsids as $index => $id) {
 
 
 			echo '<table id="t01" style="width:100%" >';
-		    echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Ingredients</td> <td>description</td> <td>Added?</td> </b> <td>Remove</td> </b></tr>';
+		    echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Ingredients</td> <td>description</td> <td>Added?</td> </b> <td>Delete</td> </b></tr>';
 		    while ($stmt->fetch()) {
 		        if($onloan==0)
 		            $onloan="No";
@@ -271,7 +271,7 @@ foreach ($ingredientsids as $index => $id) {
 		       
 		        echo "<tr>";
 		        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $grouped_ing </td> <td> $description </td><td> $onloan </td>";
-		        echo '<td><a href="removerecipe.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Remove"></input></a></td>';
+		        echo '<td><a href="deleterecipe.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Delete"></input></a></td>';
 		        echo "</tr>";
 
         
