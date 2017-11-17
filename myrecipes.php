@@ -108,8 +108,7 @@ printf("<br>Ingredient added!");
 }
 
 
-//HÄR BÖRJA JAG NU IDAG: TA BORT OM DET EJ FUNKAR (8:44) i koden!!
-//
+
 if(isset($_POST['newrecipe'])) {
 
 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -124,13 +123,9 @@ $newtitle = $_POST['newtitle'];
 $newdescription = $_POST['newdescription'];
 $newcatid = $_POST['category'];
 $ingredientsids = $_POST['ingredients']; //kanske ska vara ingredientsidS 
-//$newimage = $_POST['image'];
 
 
-//echo $newtitle;
-//echo $newdescription;
-//echo $newcatid;
-//echo $ingredientsids;
+
 
 
 $newrecipe ="INSERT INTO recipe(title, description, catid) VALUES (?, ?, ?)"; //image också efter catid
@@ -147,6 +142,7 @@ $newrecipeid = mysqli_insert_id($db); //kanske ska vara receptid
 echo $newrecipeid;
 
 
+
 //Echo under här outar nästa nummer i listan vi har 50 så då blire nästa 51 auto..
 //echo $recipeid
 //                                 $id kommer från en specifik ingrediens som sänds
@@ -156,12 +152,12 @@ foreach ($ingredientsids as $index => $id) {
 	
 	@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
-
-
 	$add_recing = "INSERT INTO recing(recipeid,ingredientsid) VALUES('$newrecipeid','$id')";
 
 	$stmt = $db->prepare($add_recing);
 	$stmt->execute();
+
+
 }
 
 }
@@ -199,6 +195,8 @@ foreach ($ingredientsids as $index => $id) {
 	<!-- <INPUT type="text" required placeholder="Recipe Name" name="userid"></br> -->
 	<!-- User ska vara inloggad när den lägger till recept, ska skickas med automatiskt -->
 
+	<h3>Category</h3>
+
 	<!-- HÄR KOMMER CATEGORY-DROPDOWNEN -->
 	<ul id="categoryToRecipe"></ul>
 
@@ -225,7 +223,11 @@ foreach ($ingredientsids as $index => $id) {
 </form>
 
 
+<h2>Don´t see your ingredients or category in the list?</br>
+Add it down below!</h2>
+
 <!-- ADD INGREDIENTS IN DROP DOWN HERE -->
+</br>
 <form action="myrecipes.php" method="POST">
 	<h3>Add Ingredients</h3>
 	<!--<INPUT type="number" required placeholder="Id" id="newingredientsid" name="newingredientsid"></br>-->

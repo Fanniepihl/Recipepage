@@ -7,6 +7,7 @@
 <body>
 
 <h2>Here are your saved recipes</h2>
+</br></br>
     
 <?php echo $_SESSION['username'];  #start sessions and echo username. ?>
 <?php
