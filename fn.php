@@ -257,6 +257,9 @@ foreach ($ingredientsids as $index => $id) {
 	<INPUT type="submit" name="newcategories" value="Send">
 </form>
 
+
+
+
 <script type="text/javascript" src="addCategory.js"></script>
 <script type="text/javascript" src="addRecipe.js"></script>
 

@@ -8,7 +8,7 @@
     
     <?php
 
-    @ $db = new mysqli('localhost:8889', 'root', 'root', 'lab_1');
+    @ $db = new mysqli('localhost', 'root', 'root', 'bread');
 
     if ($db->connect_error) {
     echo "could not connect: " . $db->connect_error;
