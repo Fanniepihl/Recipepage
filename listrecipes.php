@@ -42,7 +42,7 @@
 
 
 		        echo "<tr>";
-		        echo "<td> <img src='img/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $grouped_ing </td> <td> $description </td><td> $onloan </td>";
+		        echo "<td> <img src='uploadedfiles/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $grouped_ing </td> <td> $description </td><td> $onloan </td>";
 		        echo '<td><a href="addrecipes.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Add"></input></a></td>';
 		        echo "</tr>";
 

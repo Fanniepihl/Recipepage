@@ -203,6 +203,36 @@ foreach ($ingredientsids as $index => $id) {
 		echo "<option value='".$catid."'>".$catname."</option>";
 		}
 	?>
+
+	<?php
+	     
+	    	$files = glob("uploadedfiles/*.*");
+	    		for ($i=0; $i<count($files); $i++)
+	      		{
+	       			$uploadedfiles = $files[$i];
+	        		$supported_file = array(
+	              	 'gif',
+	               	 'jpg',
+	               	 'jpeg',
+	               	 'png'
+	         		);
+
+	        $ext = strtolower(pathinfo($uploadedfiles, PATHINFO_EXTENSION));
+	        	if (in_array($ext, $supported_file)) {
+	            	echo basename($uploadedfiles)."<br />"; 
+	            	echo '<img src="'.$uploadedfiles .' "alt="Random image" style="max-height:200px;max-width:200px" style=""/>'."<br /><br />";
+	            	} 
+	            	else {
+	                continue;
+	            	}
+	          	}
+
+	    ?>
+
+
+
+
+	
 	</select>
 
 	<INPUT type="submit" name="newrecipe" value="Send">

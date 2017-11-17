@@ -1,4 +1,4 @@
-<?php include("header.php") ?>
+<?php include("header.php"); ?>
 <?php include("config.php"); 
 
     session_start();
@@ -233,12 +233,15 @@ foreach ($ingredientsids as $index => $id) {
 <form action="myrecipes.php" method="POST">
 	<h3>Add Category</h3>
 	<!--<INPUT type="number" required placeholder="Id" id="newcatid" name="newcatid"></br>-->
-	<INPUT type="text" required placeholder="Name" id="newcatname" name="newcatname"></br></br>
+	<INPUT type="text" required placeholder="Name" id="newcatname" name="newcatname"></br>
 	<!--<INPUT type="submit" id="newingredients" name="newingredients" value="Send">-->
 	<INPUT type="submit" name="newcategories" value="Send">
 </form>
 
 </div><!---end add-recipe-->
+
+<br><h3>Add Image</h3>
+<?php include("fileupload.php") ?> <br> 
 
 <?php
 
