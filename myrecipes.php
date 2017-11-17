@@ -225,7 +225,7 @@ foreach ($ingredientsids as $index => $id) {
 <form action="myrecipes.php" method="POST">
 	<h3>Add Ingredients</h3>
 	<!--<INPUT type="number" required placeholder="Id" id="newingredientsid" name="newingredientsid"></br>-->
-	<INPUT type="text" required placeholder="Name" id="newname" name="newname"></br></br>
+	<INPUT type="text" required placeholder="Name" id="newname" name="newname"></br>
 	<!--<INPUT type="submit" id="newingredients" name="newingredients" value="Send">-->
 	<INPUT type="submit" name="newingredients" value="Send">
 </form>
@@ -238,9 +238,10 @@ foreach ($ingredientsids as $index => $id) {
 	<INPUT type="submit" name="newcategories" value="Send">
 </form>
 
+
 </div><!---end add-recipe-->
 
-<br><h3>Add Image</h3>
+ <br><h3>Add Image</h3>
 <?php include("fileupload.php") ?> <br> 
 
 <?php
