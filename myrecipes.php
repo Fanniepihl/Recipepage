@@ -175,8 +175,9 @@ foreach ($ingredientsids as $index => $id) {
 <!-- ADD RECIPE HERE -->
 <form action="myrecipes.php" method="POST">
 	<h3>Add Recipe</h3>
-	<INPUT type="text" required placeholder="Recipe Name" name="newtitle"></br>
-	<INPUT type="text" required placeholder="Description" name="newdescription"></br>
+	<INPUT type="text" required placeholder="Recipe Name" name="newtitle"></br><br>
+	<textarea name="newdescription" required placeholder="Description" rows="7" cols="30"></textarea><br>
+
 	<!-- <INPUT type="text" required placeholder="Recipe Name" name="ingredients"><br> -->
 
 	<ul id="ingredientsToRecipe"></ul>
@@ -264,7 +265,7 @@ foreach ($ingredientsids as $index => $id) {
 
 
 			echo '<table id="t01" style="width:100%" >';
-		    echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Ingredients</td> <td>description</td> <td>Added?</td> </b> <td>Delete</td> </b></tr>';
+		    echo '<tr><b><td>Image</td><b> <td>Title</td> <td>Ingredients</td> <td>Description</td> <td>Added?</td> </b> <td>Delete</td> </b></tr>';
 		    while ($stmt->fetch()) {
 		        if($onloan==0)
 		            $onloan="No";
