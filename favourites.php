@@ -32,9 +32,6 @@
                 $searchtitle = addslashes($searchtitle);
                 $searchingredients = addslashes($searchingredients);
 
-                $searchtitle = htmlentities($searchtitle);
-                $searchingredients = htmlentities($searchingredients);
-
 		
 		@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 

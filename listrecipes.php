@@ -10,11 +10,10 @@
 			<fieldset><legend><h3>Recipes:</h3></legend>
 
 
+
        		<?php
 
         	$catid = trim($_GET['catid']);
-
-
 
                 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
