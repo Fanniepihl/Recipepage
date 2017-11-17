@@ -6,6 +6,26 @@
     <h2>Contact us!</h2>
     </div> 
     
+    <?php
+
+    @ $db = new mysqli('localhost:8889', 'root', 'root', 'lab_1');
+
+    if ($db->connect_error) {
+    echo "could not connect: " . $db->connect_error;
+    printf("<br><a href=index.php>Return to home page </a>");
+    exit();
+    } 
+
+ if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
+    
+    $name = htmlentities($_POST['name']);
+   
+    $email = htmlentities($_POST['email']);
+
+    $message = htmlentities($_POST['message']);
+    
+    } 
+    ?>
     
 <!-- Forumlär för att kunna kontakta oss-->
 <?php
@@ -42,6 +62,8 @@ else                /* send the submitted data */
 	    }
     }  
 ?>
+
+
 
 </body>
 <?php include("footer.php") ?>
