@@ -24,7 +24,10 @@
                 <a class="<?php echo $current_page == 'favourites.php' ? 'active' : NULL ?>" href="favourites.php">Favourite recipes</a>   
             </li>
             <li> 
-                <a class="<?php echo $current_page == 'myrecipes.php' ? 'active' : NULL ?>" href="myrecipes.php">My recipes</a>
+                <a class="<?php echo $current_page == 'myrecipes.php' ? 'active' : NULL ?>" href="myrecipes.php">Add my recipes</a>
+            </li>
+            <li> 
+                <a class="<?php echo $current_page == 'savedrecipes.php' ? 'active' : NULL ?>" href="savedrecipes.php">Saved recipes</a>
             </li>
             <li> 
                 <a class="<?php echo $current_page == 'contact.php' ? 'active' : NULL ?>" href="contact.php">Contact</a>
