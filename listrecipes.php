@@ -23,7 +23,14 @@
 				    exit();
 				}
 
+
+
+
 				$query = "SELECT recipe.recipeid, recipe.title, recipe.description, recipe.onloan, recipe.image, GROUP_CONCAT(ingredients.name) as als FROM recipe, recing, ingredients WHERE recipe.catid=? AND recipe.recipeid = recing.recipeid AND recing.ingredientsid = ingredients.ingredientsid GROUP BY recipe.recipeid";
+
+				// Prepare an update statement and execute it. Here the code prepare the database 
+   				// stmt->bind_param : är när du binder parametrar tillvanadra,
+   				// bind_result är för kolumnerna 
 				$stmt = $db->prepare($query);
 				$stmt->bind_param('i', $catid);
 			    $stmt->bind_result($recipeid, $title, $description, $onloan, $image, $grouped_ing);

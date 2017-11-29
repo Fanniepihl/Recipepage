@@ -154,7 +154,7 @@ foreach ($ingredientsids as $index => $id) {
 
 
 <!-- ADD RECIPE HERE -->
-<form action="fn.php" method="POST">
+	<form action="fn.php" method="POST">
 	<h2>Add Recipe</h2>
 	<INPUT type="text" required placeholder="Recipe Name" name="newtitle"></br>
 	<INPUT type="text" required placeholder="Description" name="newdescription"></br>
@@ -198,7 +198,7 @@ foreach ($ingredientsids as $index => $id) {
 		echo "<option value='".$catid."'>".$catname."</option>";
 		}
 	?>
-	
+
 	
 	</select>
 
