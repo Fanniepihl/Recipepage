@@ -1,59 +1,28 @@
 <?php
-
-#print_r($_FILES['upload']);
-/*
- * The global $_FILES will contain all the uploaded file information. 
- * Its contents from the example form is as follows. Note that this assumes
- * the use of the file upload name userfile, as used in the example script above. 
- * This can be any name.
- * 
- * $_FILES['userfile']['name']
-The original name of the file on the client machine.
-
-$_FILES['userfile']['type']
-The mime type of the file, if the browser provided this information. An example would be "image/gif". This mime type is however not checked on the PHP side and therefore don't take its value for granted.
-
-$_FILES['userfile']['size']
-The size, in bytes, of the uploaded file.
-
-$_FILES['userfile']['tmp_name']
-The temporary filename of the file in which the uploaded file was stored on the server.
-
-$_FILES['userfile']['error']
-The error code associated with this file upload.
- * 
- * 
- * Note:
-Be sure your file upload form has attribute enctype="multipart/form-data" otherwise the file upload will not work.
- * 
- * 
- */
-
-#important to only allow upload for files that don't affect your PHP code. (or only those files you need)
-#after the user uploads the file, we basically run a few checks:
+//Denna sida är till för användaren så att den kan ladda upp egna filer på hemsidan när den är inloggad. 
+//After the user uploads the file, we basically run a few checks:
 
 //['tmp_name'][] kan skrivas efter uplod också om man vill söka efter ett namn.
-// "uploadedfiles/{$_FILES}['upload']['name']}"); 
 
 if (isset($_FILES['upload'])){
     
-    #let's first make a whitelist of allowed extensions        strpos? ist?
+    #let's first make a whitelist of allowed extensions        strpos? ist? Vad som är tillåtet för användaren att ladda upp. 
     $allowedextensions = array('jpg', 'jpeg', 'gif', 'png');
     $extension = strtolower(substr($_FILES['upload']['name'], strrpos($_FILES['upload']['name'], '.') + 1));
-    
-    // kolla på string strtolower och strpos. veta funktionen.
+    //Betydelse för strtolower och strpos   
+    #The strtolower() function converts a string to lowercase.      #The strrpos() function finds the position of the last occurrence of a string                                                                      inside another string.The strrpos() function is case-sensitive. 
 
 
     #test by echoing out what you upload
     echo "Your file extension is: ".$extension;
     
-    #we create an array called 'error' to store all our errors, so we can later use them.
+    #we create an array called 'error' to store all our errors, so we can later use them. Sparas i en string. 
     $error = array ();
     
-    if(in_array($extension, $allowedextensions) === false){
+    if(in_array($extension, $allowedextensions) === false){ 
         
         #add a new array entry
-        $error[] = 'This is not an image, upload is only for images.';        
+        $error[] = 'This is not an image, upload is only for images.'; #Om filen inte är tillåtet så hamnar det i error och echo "This is not an image, upload is only for images".    
     }
     
     #it is also good to think about the size of the file you want to accept.
@@ -61,7 +30,7 @@ if (isset($_FILES['upload'])){
     #this is in bytes, and 1000000 is actually 1 mb which is now our limit
     if($_FILES['upload']['size'] > 1000000){
         
-        $error[]='The file exceeded the upload limit';
+        $error[]='The file exceeded the upload limit'; #Om formatet/storleken på bilden inte är tillåtet så hamnar det i error och echo "The file exceeded the upload limit".
     }
     
     
