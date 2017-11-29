@@ -37,10 +37,14 @@
 		            $onloan="No";
 		        else $onloan="Yes";
 ;
-		       //För att få mellanrum i ingredients 
+		       //Denna använder vi för att få mellanrum och komma tecken i Ingredients listan som syns sen när userna har lagt till ett recept så att inte orden sitter ihop.
 		       	$grouped_ing = str_replace(",", ", ", $grouped_ing);
 
+		       	//Här ecoar vi efter / ut bilderna från mappen så de syns, även lagt till en max-height och en max-width så att bilderna håller sig lika stora.
 
+		       	//Här echoar vi även ut vad vi vill få  för information som : Bilden, Titeln, Mellanrummen som ska vara i description och description, och om man har addat receptet till sina favourites.
+
+		       	//Vi echoar även ut och söker om receptet är tillagt i favourites eller inte, 
 		        echo "<tr>";
 		        echo "<td> <img src='uploadedfiles/$image' style='max-height:150px;max-width:150px'</img> </td><td> $title </td><td> $grouped_ing </td> <td> $description </td><td> $onloan </td>";
 		        echo '<td><a href="add.php?recipeid=' . urlencode($recipeid) . '"><input type="submit" value="Add"></input></a></td>';
@@ -48,6 +52,7 @@
 
         
 	   		}
+	   		//Echos the table 
 	    	echo "</table>";
 			
 
