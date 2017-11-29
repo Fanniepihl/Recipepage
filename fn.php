@@ -13,8 +13,6 @@ if ($db->connect_error) {
 }
 
 
-
-
 //Query to add ingredients
 if(isset($_POST['newcategories'])) {
 

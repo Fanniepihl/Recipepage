@@ -1,14 +1,13 @@
-<?php include("header.php") ?>      <!--inkluderar header.php vilket ger index.php en header med menu--->
+<?php include("header.php") ?>      <!--inkluderar header.php vilket ger index.php en header med menu-->
 <?php include("config.php");        #inkluderar config.php så att datan hämtas från rätt databas. 
 
 session_start(); #Session startar här. 
-ob_start();
+ob_start();         //While Output Buffering is active no output is sent from the script (other than headers),
+                    //instead the output is stored in an internal buffer.
 
 ?>
 
-<h1 class="">Sign in</h1> <!--endast rubrik för sign in sidan--->
-
-
+<h1 class="">Sign in</h1> <!--endast rubrik för sign in sidan-->
 
 <?php
 
@@ -65,7 +64,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
     $totalcount = $stmt->num_rows(); 
     
     if(isset($_POST['remember'])){ 
-        setcookie('username',$uname, time()+60*60*7); #kom ihåg användaren och lösenordet i Cookie i 60*60*7. 
+        setcookie('username',$uname, time()+60*60*7); #kom ihåg användaren  i Cookie i 60*60*7. 
         
         }
 }   
@@ -101,7 +100,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
             }
         
         
-        </style> <!--- form för att skriva in användarnamn och lösenord.---> 
+        </style> <!-- form för att skriva in användarnamn och lösenord.--> 
         <table cellpadding="10" cellspacing="10" align="center"> 
         <form method="POST" action="">
             <tr><th>Username<input type="text" name="username" align="center" cellpadding="5"></th></tr>

@@ -9,8 +9,6 @@
 
 			<fieldset><legend><h3>Recipes:</h3></legend>
 
-
-
        		<?php
 
         	$catid = trim($_GET['catid']);
@@ -23,9 +21,7 @@
 				    exit();
 				}
 
-
-
-
+				//This is egentligen en JOIN 
 				$query = "SELECT recipe.recipeid, recipe.title, recipe.description, recipe.onloan, recipe.image, GROUP_CONCAT(ingredients.name) as als FROM recipe, recing, ingredients WHERE recipe.catid=? AND recipe.recipeid = recing.recipeid AND recing.ingredientsid = ingredients.ingredientsid GROUP BY recipe.recipeid";
 
 				// Prepare an update statement and execute it. Here the code prepare the database 

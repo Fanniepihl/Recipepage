@@ -6,8 +6,10 @@ include("config.php");
 $recipeid = trim($_GET['recipeid']);                                    #Hämta recipeid från databasen. 
 echo '<INPUT type="hidden" name="recipeid" value=' . $recipeid . '>';
 
-$recipeid = trim($_GET['recipeid']);      // From the hidden field
-$recipeid = addslashes($recipeid);         # addslashes för ´s. 
+$recipeid = trim($_GET['recipeid']);      // Om Usern råkar klicka ett extra mellanslag/an extra space in the form befor or/and 
+$recipeid = addslashes($recipeid);        // the word the user search for, this function will take that whitspace/space away so 
+                                            // no error 
+                                        //addslashes för ´s. 
 
 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname); #man kan bara ta bort recipes om man är inloggad. 
 

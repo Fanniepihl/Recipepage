@@ -38,7 +38,7 @@ if (isset($_GET['submit'])) {
 
 <h3>Delete recipe</h3>
 <hr>
-<form action="deleterecipe.php" method="GET">       <!--använder method="GET" eftersom recipeid ska hämtas och inte postas från sidan. --->
+<form action="deleterecipe.php" method="GET">       <!--använder method="GET" eftersom recipeid ska hämtas och inte postas från sidan. -->
     Are you sure you want to delete the recipe?
     <?php
     $recipeid = trim($_GET['recipeid']);            #Använder GET här med av samma orsak. Att det recipeid:et skall hämtas och sedan tas bort. 
