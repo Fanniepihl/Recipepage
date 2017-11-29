@@ -2,14 +2,14 @@
 <?php include("config.php") ?>
 
 <body>
-
+<!-- Title -->
 <h2> Here are your favorite recipes</h2>
 
 
 </body>
 
 <main>
-			<!--  This is a form so every recipe that has been addaed from the different categories will show up -->
+			<!--  This is a form so every recipe that has been added from the different categories will show up -->
 		
 		<form action="showlistrecipes.php" method="POST">
 			<table id="t01" style="width:100%">
@@ -18,6 +18,8 @@
 		</form>
 
 		<?php
+
+
 
 		$searchtitle = "";
         $searchingredients = "";
@@ -42,7 +44,7 @@
 		}
 		
 
-		# Build the query. Users are allowed to search on title, author, or both 
+		# Build the query. Users are allowed to search on recipe title, ingredients, or both 
 
 				$query = "SELECT recipe.recipeid, recipe.title, recipe.description, recipe.onloan, recipe.image, GROUP_CONCAT(ingredients.name) as als FROM recipe, recing, ingredients WHERE onloan = 1 AND recipe.recipeid = recing.recipeid AND recing.ingredientsid = ingredients.ingredientsid GROUP BY recipe.recipeid";
 				$stmt = $db->prepare($query);
