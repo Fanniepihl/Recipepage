@@ -14,9 +14,7 @@ if ($db->connect_error) {
 
 
 
-// while($stmt->fetch()){
-// 	echo $catname;
-// }
+
 //Query to add ingredients
 if(isset($_POST['newcategories'])) {
 
@@ -30,9 +28,6 @@ if ($db->connect_error) {
 
 $newcatid = $_POST['newcatid'];
 $newcatname = $_POST['newcatname'];
-
-//echo $newingredientsid;
-//echo $newname; 
 
 $newcategories = "INSERT INTO categories(catid, catname) VALUES(?,?);";
 
@@ -203,35 +198,7 @@ foreach ($ingredientsids as $index => $id) {
 		echo "<option value='".$catid."'>".$catname."</option>";
 		}
 	?>
-
-	<?php
-	     
-	    	$files = glob("uploadedfiles/*.*");
-	    		for ($i=0; $i<count($files); $i++)
-	      		{
-	       			$uploadedfiles = $files[$i];
-	        		$supported_file = array(
-	              	 'gif',
-	               	 'jpg',
-	               	 'jpeg',
-	               	 'png'
-	         		);
-
-	        $ext = strtolower(pathinfo($uploadedfiles, PATHINFO_EXTENSION));
-	        	if (in_array($ext, $supported_file)) {
-	            	echo basename($uploadedfiles)."<br />"; 
-	            	echo '<img src="'.$uploadedfiles .' "alt="Random image" style="max-height:200px;max-width:200px" style=""/>'."<br /><br />";
-	            	} 
-	            	else {
-	                continue;
-	            	}
-	          	}
-
-	    ?>
-
-
-
-
+	
 	
 	</select>
 
@@ -263,13 +230,6 @@ foreach ($ingredientsids as $index => $id) {
 <script type="text/javascript" src="addCategory.js"></script>
 <script type="text/javascript" src="addRecipe.js"></script>
 
-
-
-<!-- 11.29 är vi i i JAsmins video om Joins och inserts -->
-
-
-
-<!-- är i videon: 15.47 -->
 
 
 
