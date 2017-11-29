@@ -1,5 +1,5 @@
-<?php include("header.php") ?>
-<?php include("config.php") ?>
+<?php include("header.php") ?>      <!--inkluderar header.php vilket ger index.php en header med menu--->
+<?php include("config.php") ?>      <!---inkluderar config.php så att datan hämtas från rätt databas. --->
 
 <body> 
   <div id="kontakt" >
@@ -8,15 +8,15 @@
     
     <?php
 
-    @ $db = new mysqli('localhost', 'root', 'root', 'bread');
+    @ $db = new mysqli('localhost', 'root', 'root', 'bread');       #Vägen till Bread databasen som är kopplad till detta projekt. 
 
-    if ($db->connect_error) {
+    if ($db->connect_error) {                                       #If no connection to the database then print a link to index.php. 
     echo "could not connect: " . $db->connect_error;
     printf("<br><a href=index.php>Return to home page </a>");
     exit();
     } 
 
- if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
+ if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {      #POST för att det skall synas på hemsidan och inte hämtas från databasen.
     
     $name = htmlentities($_POST['name']);
    
