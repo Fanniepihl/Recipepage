@@ -3,13 +3,13 @@
 include("config.php");
 
 
-$recipeid = trim($_GET['recipeid']);
+$recipeid = trim($_GET['recipeid']);                                    #Hämta recipeid från databasen. 
 echo '<INPUT type="hidden" name="recipeid" value=' . $recipeid . '>';
 
 $recipeid = trim($_GET['recipeid']);      // From the hidden field
-$recipeid = addslashes($recipeid);
+$recipeid = addslashes($recipeid);         # addslashes för ´s. 
 
-@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname); #man kan bara ta bort recipes om man är inloggad. 
 
     if ($db->connect_error) {
         echo "could not connect: " . $db->connect_error;
