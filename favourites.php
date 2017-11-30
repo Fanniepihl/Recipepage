@@ -9,31 +9,8 @@
 	</body>
 
 	<main>
-			<!--  This is a form so every recipe that has been added from the different categories will show up -->
-		
-		<form action="showlistrecipes.php" method="POST">
-			<table id="t01" style="width:100%">
-			
-			</table>
-		</form>
 
 		<?php
-
-
-
-		$searchtitle = "";
-        $searchingredients = "";
-
-            if (isset($_POST) && !empty($_POST)) {
-                
-                $searchtitle = trim($_POST['searchtitle']);
-                $searchingredients = trim($_POST['searchingredients']);
-
-            	}
-               
-                $searchtitle = addslashes($searchtitle);
-                $searchingredients = addslashes($searchingredients);
-
 		
 		@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 

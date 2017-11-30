@@ -24,11 +24,7 @@ if ($db->connect_error) {
 }
 
 
-
-// while($stmt->fetch()){
-// 	echo $catname;
-// }
-//Query to add ingredients
+//Query to add categories
 if(isset($_POST['newcategories'])) {
 
 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -42,12 +38,8 @@ if ($db->connect_error) {
 $newcatid = $_POST['newcatid'];
 $newcatname = $_POST['newcatname'];
 
-//echo $newingredientsid;
-//echo $newname; 
-
 $newcategories = "INSERT INTO categories(catid, catname) VALUES(?,?);";
 
-//echo $newingredients;
 $stmt = $db->prepare($newcategories);
 $stmt->bind_param('is', $newcatid, $newcatname);
 $stmt->execute();
@@ -131,8 +123,7 @@ $ingredientsids = $_POST['ingredients']; //kanske ska vara ingredientsidS
 $newrecipe ="INSERT INTO recipe(title, description, catid) VALUES (?, ?, ?)"; //image också efter catid
 echo $newrecipe;
 
-//New book with AutoIncrement ID is added.
-//Last one is 50
+//New recipe with AutoIncrement ID is added.
 $stmt = $db->prepare($newrecipe);
 $stmt->bind_param('ssi', $newtitle, $newdescription, $newcatid); //$image
 $stmt->execute();
@@ -245,10 +236,8 @@ Add it down below!</h2>
 </form>
 
 
-</div><!---end add-recipe-->
-
- <!-- <br><h3>Add Image</h3>
-<?php //include("fileupload.php") ?> <br> -->
+</div><!--end add-recipe-->
+ 
 
 
 </body>
