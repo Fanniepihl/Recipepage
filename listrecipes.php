@@ -43,7 +43,6 @@
 		       //Denna använder vi för att få mellanrum och komma-tecken i Ingredients listan som syns sen när userna har lagt till ett recept så att inte orden sitter ihop.
 		       	$grouped_ing = str_replace(",", ", ", $grouped_ing);
 
-		       	//Här ecoar vi efter / ut bilderna från mappen så de syns, även lagt till en max-height och en max-width så att bilderna håller sig lika stora.
 
 		       	//Vi echoar även ut och söker om receptet är tillagt i favourites eller inte, 
 		        echo "<tr>";
