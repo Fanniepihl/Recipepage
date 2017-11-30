@@ -47,3 +47,6 @@ if (isset($_GET['submit'])) {
     <INPUT type="submit" name="submit" value="Continue">
 </form>
 <?php include("footer.php"); ?>
+
+
+

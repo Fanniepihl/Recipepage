@@ -1,5 +1,5 @@
-<?php include("header.php") ?>      <!--inkluderar header.php vilket ger index.php en header med menu--->
-<?php include("config.php") ?>      <!---inkluderar config.php så att datan hämtas från rätt databas. --->
+<?php include("header.php") ?>      <!--inkluderar header.php vilket ger index.php en header med menu-->
+<?php include("config.php") ?>      <!--inkluderar config.php så att datan hämtas från rätt databas. -->
 
 <body> 
   <div id="kontakt" >

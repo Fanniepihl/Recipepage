@@ -34,6 +34,5 @@ $recipeid = addslashes($recipeid);
     printf("<br><a href=listrecipes.php>Search for more recipes </a>");
     printf("<br><a href=index.php>Return to home page </a>");
     exit;
-    
 
 ?>
